@@ -1,5 +1,6 @@
 from node import Node
 
+# Using nodes to prepare stack logic
 class Stack:
   def __init__(self, name):
     self.size = 0
@@ -7,6 +8,7 @@ class Stack:
     self.limit = 1000
     self.name = name
   
+  # push() method to add to top of stack
   def push(self, value):
     if self.has_space():
       item = Node(value)
@@ -16,6 +18,7 @@ class Stack:
     else:
       print("No more room!")
 
+  # pop() method to remove from top of stack
   def pop(self):
     if self.size > 0:
       item_to_remove = self.top_item
@@ -24,6 +27,7 @@ class Stack:
       return item_to_remove.get_value()
     print("This stack is totally empty.")
 
+  # peek() method to view top of stack
   def peek(self):
     if self.size > 0:
       return self.top_item.get_value()
